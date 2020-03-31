@@ -1,0 +1,33 @@
+<div class="results-wrapper">
+  <app-loader [loading]="isLoading" *ngIf="isLoading; else cards"></app-loader>
+</div>
+
+<ng-template #cards>
+  <ng-container *ngIf="results.length; else noData">
+    <div *ngFor="let item of results; let i = index" class="custom-card">
+      <div class="card my-card">
+        <img [attr.src]="item.owner?.avatar_url ? item.owner?.avatar_url : '../../../../../' + imgPath + '/unknown-pic.svg'" class="card-img-top my-card-img" alt="avatar">
+        <div class="card-body my-card-body">
+          <h5 class="card-title">
+            <div class="popover-wrapper" popover="{{item.name}}"
+                 [popoverOnHover]="true">
+              <div class="popover-outer-text">
+                {{item.name | truncate: ['20']}}
+              </div>
+            </div>
+          </h5>
+          <ng-container *ngIf="!isBookmarkMode">
+            <button (click)="bookmark(item)" class="btn btn-primary"
+                    [ngClass]="{'btn-disabled': item?.isBookmarked}" [disabled]="item?.isBookmarked">
+              Bookmark
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #noData>
+  <div>No data was found</div>
+</ng-template>

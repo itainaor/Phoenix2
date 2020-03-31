@@ -1,0 +1,24 @@
+.results-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .custom-card{
+    margin: 0 10px 20px;
+    .my-card-img{
+      height: 198px;
+    }
+    .my-card{
+      width: 200px;
+    }
+    .my-card-body{
+      text-align: center;
+    }
+    .card-title{
+      .popover-wrapper{
+        .popover-outer-text{
+          min-height: 48px;
+        }
+      }
+    }
+  }
+}
