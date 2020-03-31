@@ -16,18 +16,29 @@ namespace Phoenix2
 
             routes.MapMvcAttributeRoutes();
 
+            // This is a catch-all for when no other routes matched. Let the Angular 2 router take care of it
             routes.MapRoute(
                 name: "default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                // Set a constraint to only use this for routes identified as server-side routes
+                constraints: new
+                {
+                    serverRoute = new ServerRouteConstraint(url =>
+                    {
+                        return url.PathAndQuery.StartsWith("/Home",
+                            StringComparison.InvariantCultureIgnoreCase);
+                    })
+                }
             );
-            
-            // This is a catch-all for when no other routes matched. Let the Angular 2 router take care of it
+
             routes.MapRoute(
                 name: "angular",
                 url: "{*.}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            
+
         }
     }
 }
