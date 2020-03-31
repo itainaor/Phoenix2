@@ -2,7 +2,7 @@
   <form [formGroup]="searchGroup" (ngSubmit)="doSearch()">
     <fieldset>
       <div class="input-group">
-        <input [formControl]="searchControl" type="text" class="form-control" placeholder="Search here" aria-label="Search here" aria-describedby="button-addon2">
+        <input [formControl]="searchControl" type="text" class="form-control" placeholder="Search for a GitHub repository here" aria-label="Search for a GitHub repository here" aria-describedby="button-addon2">
         <div class="input-group-append">
           <button class="btn btn-outline-primary" type="submit" id="button-addon2" [ngClass]="{'btn-disabled': !searchGroup?.controls?.searchControl?.value}" [disabled]="!searchGroup?.controls?.searchControl?.value">Search</button>
         </div>

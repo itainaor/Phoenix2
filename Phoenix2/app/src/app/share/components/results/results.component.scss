@@ -1,14 +1,14 @@
+@import '../../../assets/scss/shared-variables';
+
 .results-wrapper{
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   .custom-card{
     margin: 0 10px 20px;
+    width: 200px;
     .my-card-img{
       height: 198px;
-    }
-    .my-card{
-      width: 200px;
     }
     .my-card-body{
       text-align: center;
@@ -19,6 +19,14 @@
           min-height: 48px;
         }
       }
+    }
+  }
+}
+
+@media (max-width: $mobile_view) {
+  .results-wrapper {
+    .custom-card {
+      width: 100%;
     }
   }
 }

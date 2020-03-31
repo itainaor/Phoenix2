@@ -122,11 +122,12 @@
     <Content Include="Bundles\favicon.ico" />
     <Content Include="Bundles\fontawesome-webfont.912ec66d7572ff821749.svg" />
     <Content Include="Bundles\index.html" />
-    <Content Include="Bundles\main.b13b2b7817d47cf45c2d.js" />
+    <Content Include="Bundles\main.e1b7aa134175fef24c7f.js" />
     <Content Include="Bundles\polyfills-es5.da86213e79af5cbf4429.js" />
     <Content Include="Bundles\polyfills.11475d0f57fe6f80cb2a.js" />
     <Content Include="Bundles\runtime.689ba4fd6cadb82c1ac2.js" />
-    <Content Include="Bundles\styles.8277fb239290ebf64828.css" />
+    <Content Include="Bundles\scripts.463e420e5d947f5f75a6.js" />
+    <Content Include="Bundles\styles.3f9e449cfe187d13896f.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
